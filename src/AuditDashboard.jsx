@@ -47,7 +47,9 @@ const AuditDashboard = () => {
       
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1300px', margin: '0 auto 30px auto' }}>
         <div>
-          <h1 style={{ color: '#003366', margin: 0, fontSize: '2rem' }}>Pathlock: Role Management</h1>
+          <h1 style={{ color: '#003366', margin: 0, fontSize: '2rem' }}>Pathlock: Role Management</h1><div style={{ color: '#546e7a', fontWeight: 'bold', marginTop: '8px', fontSize: '1.1rem', letterSpacing: '0.5px' }}>
+            Analysis of Role: <span style={{ color: '#d35400' }}>ZPS_SALES_ASST_IND_M</span>
+          </div>
           <p style={{ color: '#666', marginTop: '5px' }}>Role Efficiency & License Optimization Analysis</p>
         </div>
         <button onClick={downloadPDF} style={{ backgroundColor: '#007bff', color: 'white', border: 'none', padding: '12px 25px', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>
