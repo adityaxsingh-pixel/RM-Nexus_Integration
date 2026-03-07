@@ -47,7 +47,7 @@ const AuditDashboard = () => {
       
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1300px', margin: '0 auto 30px auto' }}>
         <div>
-          <h1 style={{ color: '#003366', margin: 0, fontSize: '2rem' }}>Pathlock: Role Management</h1><div style={{ color: '#546e7a', fontWeight: 'bold', marginTop: '8px', fontSize: '1.1rem', letterSpacing: '0.5px' }}>
+          <h1 style={{ color: '#003366', margin: 0, fontSize: '2rem' }}>PL: Role Management</h1><div style={{ color: '#546e7a', fontWeight: 'bold', marginTop: '8px', fontSize: '1.1rem', letterSpacing: '0.5px' }}>
             Analysis of Role: <span style={{ color: '#d35400' }}>ZPS_SALES_ASST_IND_M</span>
           </div>
           <p style={{ color: '#666', marginTop: '5px' }}>Role Efficiency & License Optimization Analysis</p>
@@ -117,7 +117,7 @@ const AuditDashboard = () => {
           </div>
 
           <div>
-            <h3 style={{ borderBottom: '2px solid #eee', paddingBottom: '10px' }}>Pathlock Intelligence Suggestions</h3>
+            <h3 style={{ borderBottom: '2px solid #eee', paddingBottom: '10px' }}>PL Intelligent Suggestions</h3>
             <div style={{ backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '10px', fontSize: '0.9rem', lineHeight: '1.6' }}>
               <ul style={{ paddingLeft: '20px', margin: 0 }}>
                 <li><strong>FUE Mitigation:</strong> Unused transactions in Procurement and Finance are triggering the 1.0 FUE (Professional) weight. Removal enables 0.2 FUE (Core) classification.</li>
