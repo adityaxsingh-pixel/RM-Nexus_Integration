@@ -8,7 +8,7 @@ import {
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
-const AuditDashboard = () => {
+const AuditDashboard = ({ onBack }) => {
   const dashboardRef = useRef();
 
   const efficiencyData = [
@@ -47,6 +47,9 @@ const AuditDashboard = () => {
       
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1300px', margin: '0 auto 30px auto' }}>
         <div>
+          <button onClick={onBack} style={{ color: '#007bff', cursor: 'pointer', border: 'none', background: 'none', fontWeight: 'bold' }}>
+  ← Back to Main Menu
+</button>
           <h1 style={{ color: '#003366', margin: 0, fontSize: '2rem' }}>PL: Role Management</h1><div style={{ color: '#546e7a', fontWeight: 'bold', marginTop: '8px', fontSize: '1.1rem', letterSpacing: '0.5px' }}>
             Analysis of Role: <span style={{ color: '#d35400' }}>ZPS_SALES_ASST_IND_M</span>
           </div>
