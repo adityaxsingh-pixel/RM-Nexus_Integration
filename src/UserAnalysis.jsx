@@ -31,7 +31,9 @@ const UserAnalysis = ({ onBack }) => {
     <div style={containerStyle}>
       {/* Navigation Header */}
       <div style={headerNavStyle}>
-        <button onClick={onBack} style={backButtonStyle}>← Back to Hub</button>
+          <button onClick={onBack} style={{ color: '#27ae60', cursor: 'pointer', border: 'none', background: 'none', fontWeight: 'bold', fontSize: '1rem' }}>
+            ← Back to Main Menu
+          </button>
         <h1 style={headingStyle}>User Insights: <span style={{color: '#27ae60'}}>ASINGH</span></h1>
       </div>
 
