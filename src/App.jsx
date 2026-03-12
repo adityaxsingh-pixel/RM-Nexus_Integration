@@ -4,7 +4,7 @@ import MaintenanceMode from './MaintenanceMode';
 
 function App() {
   // SET TO 'true' TO BLOCK ACCESS
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false);
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
   
   // Track which dashboard we are looking at (if not in maintenance)
   const [currentView, setCurrentView] = useState('hub'); 
