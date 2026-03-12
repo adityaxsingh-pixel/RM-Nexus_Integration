@@ -13,7 +13,7 @@ const AuditDashboard = ({ onBack }) => {
   // --- DATA: SYSTEM & SINGLE ROLE METRICS ---
   const usagePieData = [
     { name: 'Used (Display)', value: 16, color: '#10b981' }, 
-    { name: 'Unused (Maintain Bloat)', value: 84, color: '#ef4444' }, 
+    { name: 'Unused (Maintain Bloat)', value: 84, color: '#f87171' }, 
   ];
 
   const complexityRadar = [
@@ -45,7 +45,8 @@ const AuditDashboard = ({ onBack }) => {
       {/* HEADER */}
       <div style={styles.header}>
         <div style={styles.brandGroup}>
-          <h1 style={styles.mainTitle}>Financial <span style={{color: '#0070f3'}}>Impact Analysis</span></h1>
+          <span style={styles.sectionLabel}>Audit & Compliance</span>
+          <h1 style={styles.mainTitle}>Financial <span style={{color: '#059669'}}>Impact Analysis</span></h1>
           <div style={styles.statusBadge}>
             <span style={styles.pulse}></span> TARGET ROLE: {selectedRole}
           </div>
@@ -77,12 +78,12 @@ const AuditDashboard = ({ onBack }) => {
           </div>
           <div style={styles.kpiCard}>
             <span style={styles.kpiLabel}>RM REDESIGN ROI</span>
-            <div style={{...styles.kpiValue, color: '#0070f3'}}>6 WEEKS</div>
+            <div style={{...styles.kpiValue, color: '#059669'}}>6 WEEKS</div>
             <p style={styles.kpiSub}>Payback period for this role</p>
           </div>
         </div>
 
-        {/* ROW 2: WHY IT COSTS MORE (USAGE vs LICENSE) */}
+        {/* ROW 2: USAGE vs LICENSE */}
         <div style={styles.gridTwo}>
           <div style={styles.chartCard}>
             <h3 style={styles.cardTitle}>Why this role triggers Professional Licensing</h3>
@@ -91,7 +92,7 @@ const AuditDashboard = ({ onBack }) => {
                 <PieChart>
                   <Pie data={usagePieData} dataKey="value" cx="50%" cy="50%" innerRadius={70} outerRadius={90} paddingAngle={8} stroke="none">
                     {usagePieData.map((e, i) => <Cell key={i} fill={e.color} />)}
-                    <Label value="Transaction Usage" position="center" fill="#ef4444" style={{ fontWeight: '900', fontSize: '14px' }} />
+                    <Label value="Transaction Usage" position="center" fill="#022c22" style={{ fontWeight: '900', fontSize: '12px' }} />
                   </Pie>
                   <Tooltip />
                 </PieChart>
@@ -107,10 +108,10 @@ const AuditDashboard = ({ onBack }) => {
             <div style={{height: '300px'}}>
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={complexityRadar}>
-                  <PolarGrid stroke="#e2e8f0" />
-                  <PolarAngleAxis dataKey="subject" tick={{fill: '#64748b', fontSize: 11, fontWeight: 700}} />
+                  <PolarGrid stroke="#cbdad2" />
+                  <PolarAngleAxis dataKey="subject" tick={{fill: '#475569', fontSize: 11, fontWeight: 700}} />
                   <Radar name="Current Status" dataKey="manual" stroke="#94a3b8" fill="#94a3b8" fillOpacity={0.2} />
-                  <Radar name="Redesigned Role" dataKey="rm" stroke="#0070f3" fill="#0070f3" fillOpacity={0.5} />
+                  <Radar name="Redesigned Role" dataKey="rm" stroke="#10b981" fill="#10b981" fillOpacity={0.5} />
                   <Legend />
                 </RadarChart>
               </ResponsiveContainer>
@@ -129,13 +130,13 @@ const AuditDashboard = ({ onBack }) => {
             <div style={{height: '250px'}}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={redesignCostData} margin={{top: 20}}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                  <XAxis dataKey="category" axisLine={false} tickLine={false} tick={{fontWeight: 700, fontSize: 11}} />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ecfdf5" />
+                  <XAxis dataKey="category" axisLine={false} tickLine={false} tick={{fontWeight: 700, fontSize: 11, fill: '#475569'}} />
                   <YAxis hide />
                   <Tooltip formatter={(value) => `$${value}`} />
                   <Legend />
-                  <Bar name="Manual Approach" dataKey="manual" fill="#cbd5e1" radius={[6, 6, 0, 0]} />
-                  <Bar name="RM Automation" dataKey="rm" fill="#0070f3" radius={[6, 6, 0, 0]} />
+                  <Bar name="Manual Approach" dataKey="manual" fill="#cbdad2" radius={[6, 6, 0, 0]} />
+                  <Bar name="RM Automation" dataKey="rm" fill="#059669" radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -143,7 +144,7 @@ const AuditDashboard = ({ onBack }) => {
           </div>
 
           <div style={styles.darkTableCard}>
-            <h3 style={{...styles.cardTitle, color: '#38bdf8', borderLeftColor: '#38bdf8'}}>ROI Projection for {selectedRole}</h3>
+            <h3 style={{...styles.cardTitle, color: '#10b981', borderLeftColor: '#10b981'}}>ROI Projection for {selectedRole}</h3>
             <div style={styles.tableRow}>
               <span>Annual License Recovery (25 Users)</span>
               <span style={{color: '#10b981', fontWeight: '800'}}>+$30,000</span>
@@ -167,32 +168,32 @@ const AuditDashboard = ({ onBack }) => {
 };
 
 const styles = {
-  pageContainer: { padding: '40px 20px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
+  pageContainer: { padding: '40px 20px', backgroundColor: '#f9fdfc', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
   header: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1300px', margin: '0 auto 40px auto' },
   brandGroup: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  mainTitle: { color: '#1a2b3b', margin: '5px 0', fontSize: '2.2rem', fontWeight: '900', letterSpacing: '-1.5px' },
-  statusBadge: { display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', fontWeight: '800', color: '#64748b', background: '#fff', padding: '6px 12px', borderRadius: '20px', border: '1px solid #e2e8f0', width: 'fit-content' },
+  sectionLabel: { fontSize: '0.75rem', fontWeight: '900', color: '#059669', textTransform: 'uppercase', letterSpacing: '2px' },
+  mainTitle: { color: '#022c22', margin: '5px 0', fontSize: '2.2rem', fontWeight: '900', letterSpacing: '-1.5px' },
+  statusBadge: { display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', fontWeight: '800', color: '#475569', background: '#fff', padding: '6px 12px', borderRadius: '20px', border: '1px solid #cbdad2', width: 'fit-content' },
   pulse: { width: '8px', height: '8px', background: '#ef4444', borderRadius: '50%', display: 'inline-block' },
   buttonGroup: { display: 'flex', gap: '12px' },
-  secondaryButton: { background: '#fff', border: '1px solid #e2e8f0', padding: '10px 20px', borderRadius: '10px', fontWeight: '700', cursor: 'pointer' },
-  exportButton: { backgroundColor: '#0070f3', color: 'white', border: 'none', padding: '10px 24px', borderRadius: '10px', cursor: 'pointer', fontWeight: '800' },
+  secondaryButton: { background: '#fff', border: '1px solid #cbdad2', padding: '10px 20px', borderRadius: '10px', fontWeight: '700', cursor: 'pointer', color: '#022c22' },
+  exportButton: { backgroundColor: '#059669', color: 'white', border: 'none', padding: '10px 24px', borderRadius: '10px', cursor: 'pointer', fontWeight: '800' },
   reportSheet: { maxWidth: '1300px', margin: '0 auto' },
   kpiRow: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '15px', marginBottom: '25px' },
-  kpiCard: { padding: '20px', background: '#fff', borderRadius: '24px', border: '1px solid #e2e8f0' },
-  kpiLabel: { fontSize: '0.65rem', fontWeight: '900', color: '#64748b' },
+  kpiCard: { padding: '20px', background: '#fff', borderRadius: '24px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px -1px rgba(2, 44, 34, 0.05)' },
+  kpiLabel: { fontSize: '0.65rem', fontWeight: '900', color: '#64748b', textTransform: 'uppercase' },
   kpiValue: { fontSize: '1.4rem', fontWeight: '900', margin: '6px 0' },
   kpiSub: { fontSize: '0.7rem', color: '#94a3b8' },
   gridTwo: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '25px' },
-  chartCard: { padding: '30px', backgroundColor: '#fff', borderRadius: '24px', border: '1px solid #e2e8f0' },
-  cardTitle: { color: '#1a2b3b', fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', marginBottom: '20px', borderLeft: '4px solid #0070f3', paddingLeft: '12px' },
+  chartCard: { padding: '30px', backgroundColor: '#fff', borderRadius: '24px', border: '1px solid #e5e7eb', boxShadow: '0 4px 6px -1px rgba(2, 44, 34, 0.05)' },
+  cardTitle: { color: '#022c22', fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', marginBottom: '20px', borderLeft: '4px solid #059669', paddingLeft: '12px' },
   insightBoxRed: { background: '#fff1f2', padding: '20px', borderRadius: '16px', fontSize: '0.85rem', color: '#9f1239', lineHeight: '1.5', borderLeft: '5px solid #ef4444' },
-  fullWidthHeader: { margin: '40px 0 20px 0', borderTop: '1px solid #e2e8f0', paddingTop: '30px' },
-  subHeading: { fontSize: '1.2rem', fontWeight: '900', color: '#1a2b3b', letterSpacing: '-0.5px' },
-  darkTableCard: { padding: '30px', backgroundColor: '#0f172a', borderRadius: '24px', color: '#fff' },
+  fullWidthHeader: { margin: '40px 0 20px 0', borderTop: '1px solid #cbdad2', paddingTop: '30px' },
+  subHeading: { fontSize: '1.2rem', fontWeight: '900', color: '#022c22', letterSpacing: '-0.5px' },
+  darkTableCard: { padding: '30px', backgroundColor: '#022c22', borderRadius: '24px', color: '#fff' },
   tableRow: { display: 'flex', justifyContent: 'space-between', padding: '15px 0', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem' },
   totalBanner: { marginTop: '25px', padding: '15px', background: 'linear-gradient(90deg, #10b981, #059669)', borderRadius: '12px', textAlign: 'center', fontWeight: '900', fontSize: '1.1rem' },
-  chartNote: { fontSize: '0.7rem', color: '#64748b', marginTop: '10px', fontStyle: 'italic' }
+  chartNote: { fontSize: '0.7rem', color: '#94a3b8', marginTop: '10px', fontStyle: 'italic' }
 };
 
 export default AuditDashboard;

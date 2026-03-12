@@ -83,37 +83,156 @@ const MigrationScreen = ({ onBack }) => {
     </div>
   );
 };
-
-// --- NEXUS STRATEGIC BLUE STYLES ---
+// --- UPDATED FOREST & MINT STRATEGIC STYLES ---
 const styles = {
-  containerStyle: { padding: '60px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
-  headerNav: { maxWidth: '1300px', margin: '0 auto 40px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
+  containerStyle: { 
+    padding: '60px', 
+    backgroundColor: '#f9fdfc', // Very pale mint background
+    minHeight: '100vh', 
+    fontFamily: '"Inter", sans-serif' 
+  },
+  headerNav: { 
+    maxWidth: '1300px', 
+    margin: '0 auto 40px auto', 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    alignItems: 'center' 
+  },
   brandBox: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#1a2b3b', margin: 0, letterSpacing: '-1.5px' },
-  accentText: { color: '#0070f3' },
-  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#fff', color: '#1a2b3b', cursor: 'pointer', fontWeight: 'bold', transition: '0.2s' },
-  mainGrid: { maxWidth: '1300px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '30px' },
-  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' },
-  chartCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0', position: 'relative' },
-  easeBadge: { position: 'absolute', top: '20px', right: '20px', backgroundColor: '#f0f7ff', color: '#0070f3', padding: '6px 12px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 'bold' },
-  cardHeading: { color: '#1a2b3b', fontSize: '1.4rem', fontWeight: '800', marginBottom: '20px' },
-  paragraph: { lineHeight: '1.7', color: '#475569', fontSize: '1.05rem', marginBottom: '20px' },
-  divider: { height: '1px', background: '#f1f5f9', margin: '20px 0' },
-  statsRow: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '30px' },
-  miniStat: { display: 'flex', alignItems: 'center', gap: '15px', padding: '20px', background: '#f8fafc', borderRadius: '16px', border: '1px solid #f1f5f9' },
-  statVal: { fontWeight: '900', fontSize: '1.3rem', color: '#1e293b' },
-  statLab: { fontSize: '0.75rem', color: '#64748b', textTransform: 'uppercase', fontWeight: '700' },
+  sectionLabel: { 
+    fontSize: '0.75rem', 
+    fontWeight: '900', 
+    color: '#059669', // Vibrant Green accent
+    textTransform: 'uppercase', 
+    letterSpacing: '2px' 
+  },
+  titleStyle: { 
+    fontSize: '2.5rem', 
+    fontWeight: '900', 
+    color: '#022c22', // Deep Forest Green (Midnight Green)
+    margin: 0, 
+    letterSpacing: '-1.5px' 
+  },
+  accentText: { color: '#059669' },
+  backButton: { 
+    padding: '12px 24px', 
+    borderRadius: '12px', 
+    border: '1px solid #cbdad2', 
+    background: '#fff', 
+    color: '#022c22', 
+    cursor: 'pointer', 
+    fontWeight: 'bold', 
+    transition: '0.2s' 
+  },
+  mainGrid: { 
+    maxWidth: '1300px', 
+    margin: '0 auto', 
+    display: 'grid', 
+    gridTemplateColumns: '1.1fr 0.9fr', 
+    gap: '30px' 
+  },
+  infoCard: { 
+    background: '#fff', 
+    padding: '40px', 
+    borderRadius: '24px', 
+    border: '1px solid #e2e8f0', 
+    boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)' 
+  },
+  chartCard: { 
+    background: '#fff', 
+    padding: '40px', 
+    borderRadius: '24px', 
+    border: '1px solid #e2e8f0', 
+    position: 'relative' 
+  },
+  easeBadge: { 
+    position: 'absolute', 
+    top: '20px', 
+    right: '20px', 
+    backgroundColor: '#ecfdf5', // Soft Mint
+    color: '#065f46', // Deep Sage
+    padding: '6px 12px', 
+    borderRadius: '20px', 
+    fontSize: '0.7rem', 
+    fontWeight: 'bold' 
+  },
+  cardHeading: { 
+    color: '#022c22', 
+    fontSize: '1.4rem', 
+    fontWeight: '800', 
+    marginBottom: '20px' 
+  },
+  paragraph: { 
+    lineHeight: '1.7', 
+    color: '#334155', 
+    fontSize: '1.05rem', 
+    marginBottom: '20px' 
+  },
+  divider: { height: '1px', background: '#ecfdf5', margin: '20px 0' },
+  statsRow: { 
+    display: 'grid', 
+    gridTemplateColumns: '1fr 1fr', 
+    gap: '20px', 
+    marginTop: '30px' 
+  },
+  miniStat: { 
+    display: 'flex', 
+    alignItems: 'center', 
+    gap: '15px', 
+    padding: '20px', 
+    background: '#f1fcf8', 
+    borderRadius: '16px', 
+    border: '1px solid #d1fae5' 
+  },
+  statVal: { fontWeight: '900', fontSize: '1.3rem', color: '#064e3b' },
+  statLab: { 
+    fontSize: '0.75rem', 
+    color: '#475569', 
+    textTransform: 'uppercase', 
+    fontWeight: '700' 
+  },
   chartPlaceholder: { marginTop: '20px' },
   barBase: { height: '10px', borderRadius: '5px', margin: '8px 0 20px 0' },
-  barLabel: { fontSize: '0.85rem', fontWeight: '700', color: '#64748b' },
+  barLabel: { fontSize: '0.85rem', fontWeight: '700', color: '#475569' },
   donutFlex: { display: 'flex', alignItems: 'center', gap: '40px', marginTop: '20px' },
-  donutMock: { width: '100px', height: '100px', borderRadius: '50%', border: '12px solid #0070f3', borderLeftColor: '#1e293b', borderTopColor: '#94a3b8', display: 'flex', alignItems: 'center', justifyContent: 'center' },
-  donutInner: { fontWeight: '900', color: '#1a2b3b', fontSize: '1.1rem' },
+  donutMock: { 
+    width: '100px', 
+    height: '100px', 
+    borderRadius: '50%', 
+    border: '12px solid #10b981', // Main Green
+    borderLeftColor: '#022c22', // Contrast Forest
+    borderTopColor: '#cbdad2', // Neutral Sage
+    display: 'flex', 
+    alignItems: 'center', 
+    justifyContent: 'center' 
+  },
+  donutInner: { fontWeight: '900', color: '#022c22', fontSize: '1.1rem' },
   legend: { listStyle: 'none', padding: 0, margin: 0 },
-  legendItem: { display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '0.9rem', color: '#475569', fontWeight: '500' },
-  dot: { display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', marginRight: '10px' },
-  aiAlert: { marginTop: '30px', padding: '15px', backgroundColor: '#f8fafc', borderRadius: '12px', borderLeft: '4px solid #0070f3', fontSize: '0.85rem', color: '#475569', lineHeight: '1.4' }
+  legendItem: { 
+    display: 'flex', 
+    alignItems: 'center', 
+    marginBottom: '8px', 
+    fontSize: '0.9rem', 
+    color: '#334155', 
+    fontWeight: '500' 
+  },
+  dot: { 
+    display: 'inline-block', 
+    width: '8px', 
+    height: '8px', 
+    borderRadius: '50%', 
+    marginRight: '10px' 
+  },
+  aiAlert: { 
+    marginTop: '30px', 
+    padding: '15px', 
+    backgroundColor: '#f1fcf8', 
+    borderRadius: '12px', 
+    borderLeft: '4px solid #10b981', 
+    fontSize: '0.85rem', 
+    color: '#064e3b', 
+    lineHeight: '1.4' 
+  }
 };
 
 export default MigrationScreen;

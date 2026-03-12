@@ -57,7 +57,7 @@ const DesignerFlow = ({ onBack }) => {
         {steps.map((step) => (
           <div key={step.id} style={{
             ...styles.glassCard,
-            borderTop: step.isAI ? '4px solid #0070f3' : '4px solid #e2e8f0'
+            borderTop: step.isAI ? '4px solid #10b981' : '4px solid #cbdad2'
           }}>
             <div style={styles.cardHeader}>
               <div style={styles.idCircle}>{step.id}</div>
@@ -84,14 +84,14 @@ const DesignerFlow = ({ onBack }) => {
   );
 };
 
-// --- STRATEGIC BLUE THEME STYLES ---
+// --- UPDATED FOREST & MINT THEME STYLES ---
 const styles = {
   containerStyle: { 
     padding: '60px', 
-    backgroundColor: '#f4f7fa', 
+    backgroundColor: '#f9fdfc', 
     minHeight: '100vh', 
     fontFamily: '"Inter", sans-serif', 
-    color: '#1a2b3b',
+    color: '#022c22',
     position: 'relative'
   },
   headerContainer: { 
@@ -104,13 +104,13 @@ const styles = {
   brandBox: { display: 'flex', flexDirection: 'column', gap: '2px' },
   sectionLabel: { 
     fontSize: '0.75rem', 
-    fontWeight: '800', 
-    color: '#0070f3', 
+    fontWeight: '900', 
+    color: '#059669', 
     textTransform: 'uppercase', 
-    letterSpacing: '1.5px' 
+    letterSpacing: '2px' 
   },
-  titleStyle: { fontSize: '2.5rem', fontWeight: '900', margin: 0, letterSpacing: '-1.5px', color: '#1a2b3b' },
-  engineText: { color: '#0070f3' },
+  titleStyle: { fontSize: '2.5rem', fontWeight: '900', margin: 0, letterSpacing: '-1.5px', color: '#022c22' },
+  engineText: { color: '#059669' },
   liveStatus: { 
     fontSize: '0.7rem', 
     color: '#64748b', 
@@ -130,9 +130,9 @@ const styles = {
   exitButton: { 
     padding: '12px 24px', 
     borderRadius: '12px', 
-    border: '1px solid #e2e8f0', 
+    border: '1px solid #cbdad2', 
     background: '#fff', 
-    color: '#1a2b3b', 
+    color: '#022c22', 
     cursor: 'pointer', 
     fontSize: '0.85rem', 
     fontWeight: '700', 
@@ -154,12 +154,12 @@ const styles = {
     display: 'flex', 
     flexDirection: 'column', 
     gap: '12px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.02)'
+    boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)'
   },
   cardHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' },
-  idCircle: { color: '#0070f3', fontWeight: '900', fontSize: '1.1rem', opacity: 0.2 },
+  idCircle: { color: '#059669', fontWeight: '900', fontSize: '1.1rem', opacity: 0.2 },
   aiTag: { 
-    backgroundColor: '#0070f3', 
+    backgroundColor: '#059669', 
     color: '#fff', 
     fontSize: '0.6rem', 
     fontWeight: '900', 
@@ -168,28 +168,28 @@ const styles = {
     letterSpacing: '0.5px' 
   },
   iconBox: { fontSize: '2.2rem' },
-  stepTitle: { margin: 0, fontSize: '1.25rem', color: '#1a2b3b', fontWeight: '800' },
+  stepTitle: { margin: 0, fontSize: '1.25rem', color: '#022c22', fontWeight: '800' },
   statChip: { 
-    backgroundColor: '#f0f7ff', 
-    color: '#0070f3', 
+    backgroundColor: '#ecfdf5', 
+    color: '#065f46', 
     padding: '4px 10px', 
     borderRadius: '6px', 
     fontSize: '0.8rem', 
     fontWeight: '700', 
     width: 'fit-content' 
   },
-  stepDesc: { fontSize: '0.9rem', color: '#5c6e82', lineHeight: '1.6', margin: 0 },
-  cardFooter: { marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #f8fafc' },
-  subLabel: { fontSize: '0.7rem', color: '#adb5bd', textTransform: 'uppercase', fontWeight: '800', letterSpacing: '0.5px' },
+  stepDesc: { fontSize: '0.9rem', color: '#475569', lineHeight: '1.6', margin: 0 },
+  cardFooter: { marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #f1fcf8' },
+  subLabel: { fontSize: '0.7rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: '800', letterSpacing: '0.5px' },
   infoBar: { 
     maxWidth: '1300px', 
     margin: '50px auto 0 auto', 
-    border: '1px solid #e2e8f0', 
+    border: '1px solid #cbdad2', 
     padding: '18px 30px', 
     borderRadius: '16px', 
     display: 'flex', 
     justifyContent: 'space-between', 
-    color: '#64748b', 
+    color: '#475569', 
     fontSize: '0.8rem', 
     background: '#fff' 
   },

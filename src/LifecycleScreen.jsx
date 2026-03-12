@@ -44,7 +44,7 @@ const LifecycleScreen = ({ onBack }) => {
       {/* Header */}
       <div style={styles.headerNav}>
         <div style={styles.brandBox}>
-          <span style={styles.sectionLabel}>Role Mangement</span>
+          <span style={styles.sectionLabel}>Role Management</span>
           <h1 style={styles.titleStyle}>Role <span style={styles.accentText}>Lifecycle</span></h1>
         </div>
         <button onClick={onBack} style={styles.backButton}>← Back to Main Menu</button>
@@ -82,16 +82,17 @@ const LifecycleScreen = ({ onBack }) => {
                 <AreaChart data={maintenanceTrend}>
                   <defs>
                     <linearGradient id="colorNexus" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#0070f3" stopOpacity={0.3}/>
-                      <stop offset="95%" stopColor="#0070f3" stopOpacity={0}/>
+                      {/* Updated Gradient to Green */}
+                      <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                  <XAxis dataKey="month" tick={{fontSize: 10}} axisLine={false} />
-                  <YAxis tick={{fontSize: 10}} axisLine={false} />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ecfdf5" />
+                  <XAxis dataKey="month" tick={{fontSize: 10, fill: '#64748b'}} axisLine={false} />
+                  <YAxis tick={{fontSize: 10, fill: '#64748b'}} axisLine={false} />
                   <Tooltip />
-                  <Area type="monotone" dataKey="manual" stroke="#94a3b8" fill="#e2e8f0" name="Traditional SAP" />
-                  <Area type="monotone" dataKey="nexus" stroke="#0070f3" fill="url(#colorNexus)" name="Nexus Orchestrator" />
+                  <Area type="monotone" dataKey="manual" stroke="#94a3b8" fill="#f1f5f9" name="Traditional SAP" />
+                  <Area type="monotone" dataKey="nexus" stroke="#10b981" fill="url(#colorNexus)" name="Nexus Orchestrator" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -120,33 +121,136 @@ const LifecycleScreen = ({ onBack }) => {
   );
 };
 
-// --- STYLES ---
+// --- UPDATED GREEN & WHITE STYLES ---
 const styles = {
-  containerStyle: { padding: '60px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
-  headerNav: { maxWidth: '1300px', margin: '0 auto 40px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
+  containerStyle: { 
+    padding: '60px', 
+    backgroundColor: '#f9fdfc', 
+    minHeight: '100vh', 
+    fontFamily: '"Inter", sans-serif' 
+  },
+  headerNav: { 
+    maxWidth: '1300px', 
+    margin: '0 auto 40px auto', 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    alignItems: 'center' 
+  },
   brandBox: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#1a2b3b', margin: 0, letterSpacing: '-1.5px' },
-  accentText: { color: '#0070f3' },
-  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#fff', color: '#1a2b3b', cursor: 'pointer', fontWeight: '700' },
-  mainGrid: { maxWidth: '1300px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '30px' },
-  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' },
-  cardHeading: { color: '#1a2b3b', fontSize: '1.4rem', fontWeight: '800', marginBottom: '15px' },
-  paragraph: { lineHeight: '1.7', color: '#475569', fontSize: '1.05rem', marginBottom: '30px' },
-  featureGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' },
-  featureItem: { padding: '20px', borderRadius: '16px', background: '#f8fafc', border: '1px solid #f1f5f9' },
-  featureHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' },
+  sectionLabel: { 
+    fontSize: '0.75rem', 
+    fontWeight: '900', 
+    color: '#059669', 
+    textTransform: 'uppercase', 
+    letterSpacing: '2px' 
+  },
+  titleStyle: { 
+    fontSize: '2.5rem', 
+    fontWeight: '900', 
+    color: '#022c22', 
+    margin: 0, 
+    letterSpacing: '-1.5px' 
+  },
+  accentText: { color: '#059669' },
+  backButton: { 
+    padding: '12px 24px', 
+    borderRadius: '12px', 
+    border: '1px solid #cbdad2', 
+    background: '#fff', 
+    color: '#022c22', 
+    cursor: 'pointer', 
+    fontWeight: '700' 
+  },
+  mainGrid: { 
+    maxWidth: '1300px', 
+    margin: '0 auto', 
+    display: 'grid', 
+    gridTemplateColumns: '1.2fr 0.8fr', 
+    gap: '30px' 
+  },
+  infoCard: { 
+    background: '#fff', 
+    padding: '40px', 
+    borderRadius: '24px', 
+    border: '1px solid #e5e7eb', 
+    boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)' 
+  },
+  cardHeading: { 
+    color: '#022c22', 
+    fontSize: '1.4rem', 
+    fontWeight: '800', 
+    marginBottom: '15px' 
+  },
+  paragraph: { 
+    lineHeight: '1.7', 
+    color: '#334155', 
+    fontSize: '1.05rem', 
+    marginBottom: '30px' 
+  },
+  featureGrid: { 
+    display: 'grid', 
+    gridTemplateColumns: '1fr 1fr', 
+    gap: '20px' 
+  },
+  featureItem: { 
+    padding: '20px', 
+    borderRadius: '16px', 
+    background: '#f1fcf8', 
+    border: '1px solid #d1fae5' 
+  },
+  featureHeader: { 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    marginBottom: '12px' 
+  },
   featureIcon: { fontSize: '1.5rem' },
-  featureTag: { fontSize: '0.6rem', fontWeight: '900', backgroundColor: '#e2e8f0', color: '#64748b', padding: '3px 8px', borderRadius: '4px' },
-  featureTitle: { fontWeight: '800', color: '#1e293b', marginBottom: '8px' },
+  featureTag: { 
+    fontSize: '0.6rem', 
+    fontWeight: '900', 
+    backgroundColor: '#d1fae5', 
+    color: '#065f46', 
+    padding: '3px 8px', 
+    borderRadius: '4px' 
+  },
+  featureTitle: { fontWeight: '800', color: '#064e3b', marginBottom: '8px' },
   featureDesc: { fontSize: '0.85rem', color: '#64748b', lineHeight: '1.5' },
   chartColumn: { display: 'flex', flexDirection: 'column', gap: '25px' },
-  chartCard: { background: '#fff', padding: '30px', borderRadius: '24px', border: '1px solid #e2e8f0' },
-  chartTitle: { fontSize: '0.9rem', fontWeight: '800', color: '#1e293b', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.5px' },
-  chartInsight: { marginTop: '20px', padding: '15px', background: '#f0f7ff', borderRadius: '12px', fontSize: '0.85rem', color: '#0070f3' },
-  statsBox: { background: '#0f172a', padding: '30px', borderRadius: '24px', color: '#fff' },
-  statLine: { display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.1)' },
-  statLabel: { color: '#94a3b8', fontSize: '0.85rem', fontWeight: '600' },
+  chartCard: { 
+    background: '#fff', 
+    padding: '30px', 
+    borderRadius: '24px', 
+    border: '1px solid #e5e7eb' 
+  },
+  chartTitle: { 
+    fontSize: '0.9rem', 
+    fontWeight: '800', 
+    color: '#022c22', 
+    marginBottom: '20px', 
+    textTransform: 'uppercase', 
+    letterSpacing: '0.5px' 
+  },
+  chartInsight: { 
+    marginTop: '20px', 
+    padding: '15px', 
+    background: '#ecfdf5', 
+    borderRadius: '12px', 
+    fontSize: '0.85rem', 
+    color: '#065f46' 
+  },
+  statsBox: { 
+    background: '#064e3b', 
+    padding: '30px', 
+    borderRadius: '24px', 
+    color: '#fff' 
+  },
+  statLine: { 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    padding: '10px 0', 
+    borderBottom: '1px solid rgba(255,255,255,0.1)' 
+  },
+  statLabel: { color: '#d1fae5', fontSize: '0.85rem', fontWeight: '600' },
   statValue: { color: '#fff', fontWeight: '900', fontSize: '0.9rem' }
 };
 

@@ -70,12 +70,12 @@ const FioriScreen = ({ onBack }) => {
             <div style={{ height: '280px', width: '100%' }}>
               <ResponsiveContainer>
                 <BarChart data={efficiencyData} layout="vertical" margin={{ left: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ecfdf5" />
                   <XAxis type="number" hide />
                   <YAxis dataKey="task" type="category" tick={{fontSize: 11, fontWeight: 700, fill: '#64748b'}} axisLine={false} width={130} />
-                  <Tooltip cursor={{fill: '#f8fafc'}} />
-                  <Bar dataKey="manual" name="Manual SAP Tooling" fill="#cbd5e1" radius={[0, 4, 4, 0]} barSize={12} />
-                  <Bar dataKey="rm" name="RM Automation" fill="#0070f3" radius={[0, 4, 4, 0]} barSize={12} />
+                  <Tooltip cursor={{fill: '#f1fcf8'}} />
+                  <Bar dataKey="manual" name="Manual SAP Tooling" fill="#cbdad2" radius={[0, 4, 4, 0]} barSize={12} />
+                  <Bar dataKey="rm" name="RM Automation" fill="#10b981" radius={[0, 4, 4, 0]} barSize={12} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -86,7 +86,7 @@ const FioriScreen = ({ onBack }) => {
           </div>
 
           <div style={styles.darkNote}>
-            <strong>Architect Intelligence:</strong> RM analysis of Launchpad history can reduce tile redundancy by up to 40% while ensuring 100% functional coverage.
+            <strong style={{color: '#fff'}}>Architect Intelligence:</strong> RM analysis of Launchpad history can reduce tile redundancy by up to 40% while ensuring 100% functional coverage.
           </div>
         </div>
       </div>
@@ -94,32 +94,33 @@ const FioriScreen = ({ onBack }) => {
   );
 };
 
+// --- UPDATED GREEN & WHITE STYLES ---
 const styles = {
-  containerStyle: { padding: '60px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
+  containerStyle: { padding: '60px', backgroundColor: '#f9fdfc', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
   headerNav: { maxWidth: '1300px', margin: '0 auto 40px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
   brandBox: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#1a2b3b', margin: 0, letterSpacing: '-1.5px' },
-  accentText: { color: '#0070f3' },
-  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#fff', color: '#1a2b3b', cursor: 'pointer', fontWeight: '700' },
+  sectionLabel: { fontSize: '0.75rem', fontWeight: '900', color: '#059669', textTransform: 'uppercase', letterSpacing: '2px' },
+  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#022c22', margin: 0, letterSpacing: '-1.5px' },
+  accentText: { color: '#059669' },
+  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #cbdad2', background: '#fff', color: '#022c22', cursor: 'pointer', fontWeight: '700' },
   mainGrid: { maxWidth: '1300px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '30px' },
-  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' },
-  badge: { display: 'inline-block', backgroundColor: '#f0f7ff', color: '#0070f3', fontSize: '0.65rem', fontWeight: '900', padding: '4px 10px', borderRadius: '4px', marginBottom: '15px' },
-  cardHeading: { color: '#1a2b3b', fontSize: '1.5rem', fontWeight: '800', marginBottom: '15px' },
-  paragraph: { lineHeight: '1.7', color: '#475569', fontSize: '1.05rem', marginBottom: '30px' },
+  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e5e7eb', boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)' },
+  badge: { display: 'inline-block', backgroundColor: '#ecfdf5', color: '#065f46', fontSize: '0.65rem', fontWeight: '900', padding: '4px 10px', borderRadius: '4px', marginBottom: '15px' },
+  cardHeading: { color: '#022c22', fontSize: '1.5rem', fontWeight: '800', marginBottom: '15px' },
+  paragraph: { lineHeight: '1.7', color: '#334155', fontSize: '1.05rem', marginBottom: '30px' },
   valueGrid: { display: 'flex', flexDirection: 'column', gap: '20px' },
-  valueItem: { display: 'flex', gap: '20px', padding: '15px', borderRadius: '16px', background: '#f8fafc', border: '1px solid #f1f5f9' },
+  valueItem: { display: 'flex', gap: '20px', padding: '15px', borderRadius: '16px', background: '#f1fcf8', border: '1px solid #d1fae5' },
   valueIcon: { fontSize: '1.5rem' },
-  valueTitle: { fontWeight: '800', color: '#1e293b', marginBottom: '4px' },
+  valueTitle: { fontWeight: '800', color: '#064e3b', marginBottom: '4px' },
   valueDesc: { fontSize: '0.85rem', color: '#64748b', lineHeight: '1.4' },
   chartColumn: { display: 'flex', flexDirection: 'column', gap: '25px' },
-  chartCard: { background: '#fff', padding: '30px', borderRadius: '24px', border: '1px solid #e2e8f0' },
-  chartTitle: { fontSize: '0.9rem', fontWeight: '800', color: '#1e293b', marginBottom: '20px', textTransform: 'uppercase' },
+  chartCard: { background: '#fff', padding: '30px', borderRadius: '24px', border: '1px solid #e5e7eb' },
+  chartTitle: { fontSize: '0.9rem', fontWeight: '800', color: '#022c22', marginBottom: '20px', textTransform: 'uppercase' },
   chartLegend: { display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '10px' },
   legendItem: { fontSize: '0.75rem', color: '#64748b', display: 'flex', alignItems: 'center', gap: '5px' },
-  manualDot: { width: '8px', height: '8px', borderRadius: '50%', background: '#cbd5e1' },
-  rmDot: { width: '8px', height: '8px', borderRadius: '50%', background: '#0070f3' },
-  darkNote: { background: '#0f172a', padding: '25px', borderRadius: '24px', color: '#94a3b8', fontSize: '0.85rem', lineHeight: '1.6', borderLeft: '4px solid #0070f3' }
+  manualDot: { width: '8px', height: '8px', borderRadius: '50%', background: '#cbdad2' },
+  rmDot: { width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' },
+  darkNote: { background: '#064e3b', padding: '25px', borderRadius: '24px', color: '#d1fae5', fontSize: '0.85rem', lineHeight: '1.6', borderLeft: '4px solid #10b981' }
 };
 
 export default FioriScreen;

@@ -13,23 +13,23 @@ const UserAnalysis = ({ onBack }) => {
 
   // Data: Risk Mitigation Path
   const riskMitigation = [
-    { stage: 'Legacy', risk: 100, color: '#ef4444' },
-    { stage: 'Optimized', risk: 40, color: '#f59e0b' },
-    { stage: 'RM Shield', risk: 5, color: '#10b981' },
+    { stage: 'Legacy', risk: 100, color: '#f87171' }, // Soft Red
+    { stage: 'Optimized', risk: 40, color: '#f59e0b' }, // Amber
+    { stage: 'RM Shield', risk: 5, color: '#10b981' }, // Mint Green
   ];
 
-  // NEW DATA: Complexity Score (Pulling from Deriver/Lifecycle logic)
+  // Complexity Score
   const complexityData = [
-    { name: 'Manual PFCG Roles', value: 400, fill: '#94a3b8' },
-    { name: 'RM Optimized Set', value: 45, fill: '#0070f3' },
+    { name: 'Manual PFCG Roles', value: 400, fill: '#cbdad2' },
+    { name: 'RM Optimized Set', value: 45, fill: '#059669' },
   ];
 
-  // NEW DATA: Security Debt over time (Manual vs RM Automation)
+  // Security Debt over time
   const debtData = [
     { month: 'Jan', manualDebt: 20, rmDebt: 10 },
     { month: 'Feb', manualDebt: 35, rmDebt: 12 },
     { month: 'Mar', manualDebt: 55, rmDebt: 11 },
-    { month: 'Apr', manualDebt: 85, rmDebt: 8 }, // Manual spikes as more users are added
+    { month: 'Apr', manualDebt: 85, rmDebt: 8 },
   ];
 
   return (
@@ -64,7 +64,7 @@ const UserAnalysis = ({ onBack }) => {
           </div>
           <div style={styles.kpiCardStyle}>
             <span style={styles.kpiLabel}>Maintenance Delta</span>
-            <div style={{...styles.kpiValue, color: '#10b981'}}>-85%</div>
+            <div style={{...styles.kpiValue, color: '#059669'}}>-85%</div>
             <p style={styles.kpiSubText}>Effort saved with RM Engine</p>
           </div>
         </div>
@@ -76,10 +76,10 @@ const UserAnalysis = ({ onBack }) => {
             <div style={{height: '200px'}}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={bloatData} stackOffset="expand">
-                  <XAxis dataKey="category" axisLine={false} tickLine={false} />
+                  <XAxis dataKey="category" axisLine={false} tickLine={false} tick={{fontSize: 11, fill: '#64748b'}} />
                   <Tooltip />
-                  <Bar dataKey="unique" stackId="a" fill="#0070f3" name="Used T-Codes" />
-                  <Bar dataKey="overhead" stackId="a" fill="#e2e8f0" name="Ghost Assignments" />
+                  <Bar dataKey="unique" stackId="a" fill="#10b981" name="Used T-Codes" />
+                  <Bar dataKey="overhead" stackId="a" fill="#cbdad2" name="Ghost Assignments" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -93,12 +93,12 @@ const UserAnalysis = ({ onBack }) => {
             <div style={{height: '200px'}}>
               <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart data={riskMitigation}>
-                  <XAxis dataKey="stage" axisLine={false} tickLine={false} />
+                  <XAxis dataKey="stage" axisLine={false} tickLine={false} tick={{fontSize: 11, fill: '#64748b'}} />
                   <Tooltip />
                   <Bar dataKey="risk" barSize={40}>
                     {riskMitigation.map((e, i) => <Cell key={i} fill={e.color} />)}
                   </Bar>
-                  <Line type="monotone" dataKey="risk" stroke="#1e293b" />
+                  <Line type="monotone" dataKey="risk" stroke="#022c22" strokeWidth={2} dot={{fill: '#022c22'}} />
                 </ComposedChart>
               </ResponsiveContainer>
             </div>
@@ -108,7 +108,7 @@ const UserAnalysis = ({ onBack }) => {
           </div>
         </div>
 
-        {/* NEW ROW 3: SYSTEM SCALABILITY (The "Why Now" Argument) */}
+        {/* ROW 3: SYSTEM SCALABILITY */}
         <div style={styles.chartGridStyle}>
           <div style={styles.cardStyle}>
             <h3 style={styles.cardTitleStyle}>Landscape Complexity Score</h3>
@@ -122,9 +122,9 @@ const UserAnalysis = ({ onBack }) => {
                   </PieChart>
                </ResponsiveContainer>
                <div style={{width: '40%', fontSize: '0.8rem', color: '#64748b'}}>
-                  <div style={{marginBottom: '10px'}}><span style={{color: '#94a3b8'}}>■</span> 400 Legacy Roles</div>
-                  <div><span style={{color: '#0070f3'}}>■</span> 45 RM Master Roles</div>
-                  <p style={{marginTop: '15px', fontWeight: 'bold', color: '#1a2b3b'}}>88% Reduction in Maintenance Objects</p>
+                  <div style={{marginBottom: '10px'}}><span style={{color: '#cbdad2'}}>■</span> 400 Legacy</div>
+                  <div><span style={{color: '#059669'}}>■</span> 45 RM Master</div>
+                  <p style={{marginTop: '15px', fontWeight: 'bold', color: '#022c22'}}>88% Reduction in Objects</p>
                </div>
             </div>
           </div>
@@ -134,12 +134,12 @@ const UserAnalysis = ({ onBack }) => {
             <div style={{height: '200px'}}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={debtData}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                  <XAxis dataKey="month" axisLine={false} tickLine={false} />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ecfdf5" />
+                  <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fontSize: 11, fill: '#64748b'}} />
                   <Tooltip />
                   <Legend iconType="circle" />
-                  <Bar dataKey="manualDebt" name="Manual Debt" fill="#cbd5e1" radius={[4,4,0,0]} />
-                  <Bar dataKey="rmDebt" name="RM Controlled" fill="#0070f3" radius={[4,4,0,0]} />
+                  <Bar dataKey="manualDebt" name="Manual Debt" fill="#cbdad2" radius={[4,4,0,0]} />
+                  <Bar dataKey="rmDebt" name="RM Controlled" fill="#10b981" radius={[4,4,0,0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -149,33 +149,32 @@ const UserAnalysis = ({ onBack }) => {
         {/* FINAL STRATEGY BOX */}
         <div style={styles.strategyBoxStyle}>
           <div style={styles.strategyHeader}>
-            <h3 style={{margin: 0, fontSize: '1.2rem'}}>Redesign Implementation Plan</h3>
+            <h3 style={{margin: 0, fontSize: '1.2rem', fontWeight: '900'}}>Redesign Implementation Plan</h3>
             <div style={styles.efficiencyBadge}>ROI: 4.2 MONTHS</div>
           </div>
           <div style={styles.benefitGrid}>
             <div style={styles.benefitItem}>
               <div style={styles.benefitIcon}>🧬</div>
               <div style={styles.benefitContent}>
-                <h4>Inheritance Logic</h4>
-                <p>Replace manual mapping with RM Org Sets. Change a value once; propagate to 500 derived roles instantly.</p>
+                <h4 style={styles.benefitHeader}>Inheritance Logic</h4>
+                <p style={styles.benefitPara}>Replace manual mapping with RM Org Sets. Change a value once; propagate to 500 derived roles instantly.</p>
               </div>
             </div>
             <div style={styles.benefitItem}>
               <div style={styles.benefitIcon}>📉</div>
               <div style={styles.benefitContent}>
-                <h4>License Clawback</h4>
-                <p>Automated removal of FI_MAINTAIN from 'Display-Only' users pays for the RM implementation in year one.</p>
+                <h4 style={styles.benefitHeader}>License Clawback</h4>
+                <p style={styles.benefitPara}>Automated removal of FI_MAINTAIN from 'Display-Only' users pays for the RM implementation in year one.</p>
               </div>
             </div>
             <div style={styles.benefitItem}>
               <div style={styles.benefitIcon}>⚖️</div>
               <div style={styles.benefitContent}>
-                <h4>Zero-Conflict GRC</h4>
-                <p>Move from reactive "Clean-up" to proactive "Shielding" using the Shadow Simulator's background delta check.</p>
+                <h4 style={styles.benefitHeader}>Zero-Conflict GRC</h4>
+                <p style={styles.benefitPara}>Move from reactive "Clean-up" to proactive "Shielding" using the Shadow Simulator's delta check.</p>
               </div>
             </div>
           </div>
-          
         </div>
 
       </div>
@@ -183,35 +182,34 @@ const UserAnalysis = ({ onBack }) => {
   );
 };
 
-// ... Styles remain identical to previous provided code, adding small adjustments for the 3rd row ...
+// --- STYLES ---
 const styles = {
-  // (Include previous styles here, ensuring chartGridStyle allows for the second row of charts)
-  containerStyle: { padding: '60px 20px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
+  containerStyle: { padding: '60px 20px', backgroundColor: '#f9fdfc', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
   headerNavStyle: { maxWidth: '1300px', margin: '0 auto 40px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' },
   brandBox: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  headingStyle: { color: '#1a2b3b', margin: '5px 0', fontSize: '2.5rem', fontWeight: '900', letterSpacing: '-1.5px' },
-  accentText: { color: '#0070f3' },
-  backButtonStyle: { background: '#fff', border: '1px solid #e2e8f0', color: '#1a2b3b', padding: '12px 24px', borderRadius: '12px', cursor: 'pointer', fontWeight: '700', fontSize: '0.8rem' },
+  sectionLabel: { fontSize: '0.75rem', fontWeight: '900', color: '#059669', textTransform: 'uppercase', letterSpacing: '2px' },
+  headingStyle: { color: '#022c22', margin: '5px 0', fontSize: '2.5rem', fontWeight: '900', letterSpacing: '-1.5px' },
+  accentText: { color: '#059669' },
+  backButtonStyle: { background: '#fff', border: '1px solid #cbdad2', color: '#022c22', padding: '12px 24px', borderRadius: '12px', cursor: 'pointer', fontWeight: '700', fontSize: '0.8rem' },
   reportBoxStyle: { maxWidth: '1300px', margin: '0 auto' },
   kpiRowStyle: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '30px' },
-  kpiCardStyle: { padding: '24px', borderRadius: '24px', backgroundColor: '#fff', border: '1px solid #e2e8f0', textAlign: 'left', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' },
+  kpiCardStyle: { padding: '24px', borderRadius: '24px', backgroundColor: '#fff', border: '1px solid #e5e7eb', textAlign: 'left', boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)' },
   kpiLabel: { fontSize: '0.7rem', fontWeight: '800', color: '#64748b', letterSpacing: '1px', textTransform: 'uppercase' },
   kpiValue: { fontSize: '1.6rem', fontWeight: '900', margin: '8px 0', letterSpacing: '-0.5px' },
   kpiSubText: { fontSize: '0.8rem', color: '#94a3b8', fontWeight: '600' },
   chartGridStyle: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '25px' },
-  cardStyle: { padding: '30px', borderRadius: '28px', border: '1px solid #e2e8f0', backgroundColor: '#fff' },
-  cardTitleStyle: { color: '#1a2b3b', fontSize: '0.9rem', fontWeight: '800', marginBottom: '20px', textTransform: 'uppercase' },
-  insightBox: { fontSize: '0.85rem', color: '#475569', marginTop: '15px', backgroundColor: '#f8fafc', padding: '15px', borderRadius: '12px', borderLeft: '5px solid #0070f3' },
-  strategyBoxStyle: { padding: '40px', backgroundColor: '#0f172a', borderRadius: '32px', color: '#fff', marginTop: '10px' },
+  cardStyle: { padding: '30px', borderRadius: '28px', border: '1px solid #e5e7eb', backgroundColor: '#fff', boxShadow: '0 4px 6px -1px rgba(2, 44, 34, 0.05)' },
+  cardTitleStyle: { color: '#022c22', fontSize: '0.9rem', fontWeight: '800', marginBottom: '20px', textTransform: 'uppercase', borderLeft: '4px solid #059669', paddingLeft: '12px' },
+  insightBox: { fontSize: '0.85rem', color: '#334155', marginTop: '15px', backgroundColor: '#f1fcf8', padding: '15px', borderRadius: '12px', borderLeft: '5px solid #10b981' },
+  strategyBoxStyle: { padding: '40px', backgroundColor: '#022c22', borderRadius: '32px', color: '#fff', marginTop: '10px' },
   strategyHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' },
-  efficiencyBadge: { backgroundColor: '#0070f3', color: '#fff', padding: '8px 16px', borderRadius: '8px', fontSize: '0.7rem', fontWeight: '900' },
-  benefitGrid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', marginBottom: '40px' },
+  efficiencyBadge: { backgroundColor: '#10b981', color: '#fff', padding: '8px 16px', borderRadius: '8px', fontSize: '0.7rem', fontWeight: '900' },
+  benefitGrid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' },
   benefitItem: { display: 'flex', gap: '15px' },
   benefitIcon: { fontSize: '1.8rem' },
-  benefitContent: { h4: { margin: '0 0 8px 0', fontSize: '1rem', fontWeight: '700' }, p: { margin: 0, fontSize: '0.85rem', color: '#94a3b8', lineHeight: '1.5' } },
-  actionFooter: { paddingTop: '25px', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
-  executeButton: { backgroundColor: '#fff', color: '#0f172a', border: 'none', padding: '14px 28px', borderRadius: '14px', fontWeight: '800', cursor: 'pointer' }
+  benefitContent: { display: 'flex', flexDirection: 'column', gap: '4px' },
+  benefitHeader: { margin: 0, fontSize: '1rem', fontWeight: '700', color: '#fff' },
+  benefitPara: { margin: 0, fontSize: '0.85rem', color: '#d1fae5', lineHeight: '1.5', opacity: 0.8 },
 };
 
 export default UserAnalysis;

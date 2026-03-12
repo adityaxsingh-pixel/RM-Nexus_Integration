@@ -118,37 +118,156 @@ const TestingScreen = ({ onBack }) => {
     </div>
   );
 };
-
+// --- UPDATED FOREST & MINT TESTING STYLES ---
 const styles = {
-  containerStyle: { padding: '60px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
-  headerNav: { maxWidth: '1300px', margin: '0 auto 40px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
+  containerStyle: { 
+    padding: '60px', 
+    backgroundColor: '#f9fdfc', // Very pale mint background
+    minHeight: '100vh', 
+    fontFamily: '"Inter", sans-serif' 
+  },
+  headerNav: { 
+    maxWidth: '1300px', 
+    margin: '0 auto 40px auto', 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    alignItems: 'center' 
+  },
   brandBox: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#1a2b3b', margin: 0, letterSpacing: '-1.5px' },
-  accentText: { color: '#0070f3' },
-  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#fff', color: '#1a2b3b', cursor: 'pointer', fontWeight: '700' },
-  mainGrid: { maxWidth: '1300px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '30px' },
-  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' },
-  badge: { display: 'inline-block', backgroundColor: '#f0f7ff', color: '#0070f3', fontSize: '0.65rem', fontWeight: '900', padding: '4px 10px', borderRadius: '4px', marginBottom: '15px' },
-  cardHeading: { color: '#1a2b3b', fontSize: '1.5rem', fontWeight: '800', marginBottom: '15px' },
-  paragraph: { lineHeight: '1.7', color: '#475569', fontSize: '1.05rem', marginBottom: '30px' },
+  sectionLabel: { 
+    fontSize: '0.75rem', 
+    fontWeight: '900', 
+    color: '#059669', // Vibrant Green
+    textTransform: 'uppercase', 
+    letterSpacing: '2px' 
+  },
+  titleStyle: { 
+    fontSize: '2.5rem', 
+    fontWeight: '900', 
+    color: '#022c22', // Deep Forest Green
+    margin: 0, 
+    letterSpacing: '-1.5px' 
+  },
+  accentText: { color: '#059669' },
+  backButton: { 
+    padding: '12px 24px', 
+    borderRadius: '12px', 
+    border: '1px solid #cbdad2', 
+    background: '#fff', 
+    color: '#022c22', 
+    cursor: 'pointer', 
+    fontWeight: '700' 
+  },
+  mainGrid: { 
+    maxWidth: '1300px', 
+    margin: '0 auto', 
+    display: 'grid', 
+    gridTemplateColumns: '1.1fr 0.9fr', 
+    gap: '30px' 
+  },
+  infoCard: { 
+    background: '#fff', 
+    padding: '40px', 
+    borderRadius: '24px', 
+    border: '1px solid #e2e8f0', 
+    boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)' 
+  },
+  badge: { 
+    display: 'inline-block', 
+    backgroundColor: '#ecfdf5', // Soft Mint
+    color: '#065f46', // Deep Sage
+    fontSize: '0.65rem', 
+    fontWeight: '900', 
+    padding: '4px 10px', 
+    borderRadius: '4px', 
+    marginBottom: '15px' 
+  },
+  cardHeading: { 
+    color: '#022c22', 
+    fontSize: '1.5rem', 
+    fontWeight: '800', 
+    marginBottom: '15px' 
+  },
+  paragraph: { 
+    lineHeight: '1.7', 
+    color: '#334155', 
+    fontSize: '1.05rem', 
+    marginBottom: '30px' 
+  },
   featureList: { display: 'flex', flexDirection: 'column', gap: '25px' },
   featureItem: { display: 'flex', gap: '20px', alignItems: 'flex-start' },
-  iconCircle: { width: '45px', height: '45px', borderRadius: '12px', backgroundColor: '#f8fafc', border: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 },
-  featureTitle: { fontWeight: '800', color: '#1e293b', marginBottom: '4px', fontSize: '1rem' },
+  iconCircle: { 
+    width: '45px', 
+    height: '45px', 
+    borderRadius: '12px', 
+    backgroundColor: '#f1fcf8', 
+    border: '1px solid #d1fae5', 
+    display: 'flex', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    fontSize: '1.3rem', 
+    flexShrink: 0 
+  },
+  featureTitle: { fontWeight: '800', color: '#064e3b', marginBottom: '4px', fontSize: '1rem' },
   featureDesc: { fontSize: '0.85rem', color: '#64748b', lineHeight: '1.5' },
   chartColumn: { display: 'flex', flexDirection: 'column', gap: '25px' },
-  chartCard: { background: '#fff', padding: '30px', borderRadius: '24px', border: '1px solid #e2e8f0' },
-  chartTitle: { fontSize: '0.9rem', fontWeight: '800', color: '#1e293b', marginBottom: '20px', textTransform: 'uppercase' },
-  chartInsight: { marginTop: '20px', padding: '15px', background: '#f8fafc', borderRadius: '12px', fontSize: '0.85rem', color: '#475569', lineHeight: '1.5' },
-  statusBox: { background: '#0f172a', padding: '30px', borderRadius: '24px', color: '#fff' },
+  chartCard: { 
+    background: '#fff', 
+    padding: '30px', 
+    borderRadius: '24px', 
+    border: '1px solid #e2e8f0' 
+  },
+  chartTitle: { 
+    fontSize: '0.9rem', 
+    fontWeight: '800', 
+    color: '#022c22', 
+    marginBottom: '20px', 
+    textTransform: 'uppercase' 
+  },
+  chartInsight: { 
+    marginTop: '20px', 
+    padding: '15px', 
+    background: '#f1fcf8', 
+    borderRadius: '12px', 
+    fontSize: '0.85rem', 
+    color: '#334155', 
+    lineHeight: '1.5' 
+  },
+  statusBox: { 
+    background: '#064e3b', // Deep Spruce Green (Replaces dark navy)
+    padding: '30px', 
+    borderRadius: '24px', 
+    color: '#fff' 
+  },
   pulseContainer: { display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '25px' },
-  statusText: { fontSize: '0.75rem', fontWeight: '900', letterSpacing: '1px', color: '#38bdf8' },
-  pulse: { width: '10px', height: '10px', borderRadius: '50%', background: '#38bdf8', boxShadow: '0 0 10px #38bdf8' },
+  statusText: { 
+    fontSize: '0.75rem', 
+    fontWeight: '900', 
+    letterSpacing: '1px', 
+    color: '#10b981' // Vibrant Green pulse text
+  },
+  pulse: { 
+    width: '10px', 
+    height: '10px', 
+    borderRadius: '50%', 
+    background: '#10b981', 
+    boxShadow: '0 0 10px #10b981' 
+  },
   statGrid: { display: 'flex', gap: '15px' },
-  statSquare: { flex: 1, padding: '15px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' },
-  statLabel: { fontSize: '0.65rem', color: '#94a3b8', fontWeight: '700', textTransform: 'uppercase', marginBottom: '5px' },
+  statSquare: { 
+    flex: 1, 
+    padding: '15px', 
+    background: 'rgba(255,255,255,0.08)', 
+    borderRadius: '12px', 
+    border: '1px solid rgba(255,255,255,0.15)' 
+  },
+  statLabel: { 
+    fontSize: '0.65rem', 
+    color: '#d1fae5', 
+    fontWeight: '700', 
+    textTransform: 'uppercase', 
+    marginBottom: '5px' 
+  },
   statNum: { fontSize: '1.4rem', fontWeight: '900', color: '#fff' }
 };
-
 export default TestingScreen;

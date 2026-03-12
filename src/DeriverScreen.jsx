@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 const DeriverScreen = ({ onBack }) => {
@@ -77,12 +77,12 @@ const DeriverScreen = ({ onBack }) => {
             <div style={{ height: '250px', width: '100%' }}>
               <ResponsiveContainer>
                 <BarChart data={scaleData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                  <XAxis dataKey="name" tick={{fontSize: 11, fontWeight: 600}} axisLine={false} />
-                  <YAxis tick={{fontSize: 11}} axisLine={false} />
-                  <Tooltip cursor={{fill: '#f8fafc'}} />
-                  <Bar dataKey="manual" name="Manual Maintenance" fill="#cbd5e1" radius={[4, 4, 0, 0]} barSize={25} />
-                  <Bar dataKey="rm" name="RM One-Go Derivation" fill="#0070f3" radius={[4, 4, 0, 0]} barSize={25} />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ecfdf5" />
+                  <XAxis dataKey="name" tick={{fontSize: 11, fontWeight: 600, fill: '#64748b'}} axisLine={false} />
+                  <YAxis tick={{fontSize: 11, fill: '#64748b'}} axisLine={false} />
+                  <Tooltip cursor={{fill: '#f1fcf8'}} />
+                  <Bar dataKey="manual" name="Manual Maintenance" fill="#cbdad2" radius={[4, 4, 0, 0]} barSize={25} />
+                  <Bar dataKey="rm" name="RM One-Go Derivation" fill="#10b981" radius={[4, 4, 0, 0]} barSize={25} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -112,38 +112,38 @@ const DeriverScreen = ({ onBack }) => {
 };
 
 const styles = {
-  containerStyle: { padding: '60px', backgroundColor: '#f4f7fa', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
+  containerStyle: { padding: '60px', backgroundColor: '#f9fdfc', minHeight: '100vh', fontFamily: '"Inter", sans-serif' },
   headerNav: { maxWidth: '1300px', margin: '0 auto 40px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
   brandBox: { display: 'flex', flexDirection: 'column' },
-  sectionLabel: { fontSize: '0.75rem', fontWeight: '800', color: '#0070f3', textTransform: 'uppercase', letterSpacing: '1.5px' },
-  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#1a2b3b', margin: 0, letterSpacing: '-1.5px' },
-  accentText: { color: '#0070f3' },
-  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#fff', color: '#1a2b3b', cursor: 'pointer', fontWeight: '700' },
+  sectionLabel: { fontSize: '0.75rem', fontWeight: '900', color: '#059669', textTransform: 'uppercase', letterSpacing: '2px' },
+  titleStyle: { fontSize: '2.5rem', fontWeight: '900', color: '#022c22', margin: 0, letterSpacing: '-1.5px' },
+  accentText: { color: '#059669' },
+  backButton: { padding: '12px 24px', borderRadius: '12px', border: '1px solid #cbdad2', background: '#fff', color: '#022c22', cursor: 'pointer', fontWeight: '700' },
   mainGrid: { maxWidth: '1300px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '30px' },
-  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' },
-  badge: { display: 'inline-block', backgroundColor: '#f0f7ff', color: '#0070f3', fontSize: '0.65rem', fontWeight: '900', padding: '4px 10px', borderRadius: '4px', marginBottom: '15px' },
-  cardHeading: { color: '#1a2b3b', fontSize: '1.5rem', fontWeight: '800', marginBottom: '15px' },
-  paragraph: { lineHeight: '1.7', color: '#475569', fontSize: '1.05rem', marginBottom: '30px' },
+  infoCard: { background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #e5e7eb', boxShadow: '0 10px 15px -3px rgba(2, 44, 34, 0.05)' },
+  badge: { display: 'inline-block', backgroundColor: '#ecfdf5', color: '#065f46', fontSize: '0.65rem', fontWeight: '900', padding: '4px 10px', borderRadius: '4px', marginBottom: '15px' },
+  cardHeading: { color: '#022c22', fontSize: '1.5rem', fontWeight: '800', marginBottom: '15px' },
+  paragraph: { lineHeight: '1.7', color: '#334155', fontSize: '1.05rem', marginBottom: '30px' },
   stepGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' },
-  stepCard: { padding: '20px', background: '#f8fafc', borderRadius: '16px', border: '1px solid #f1f5f9' },
+  stepCard: { padding: '20px', background: '#f1fcf8', borderRadius: '16px', border: '1px solid #d1fae5' },
   stepHeader: { display: 'flex', justifyContent: 'space-between', marginBottom: '12px' },
   stepIcon: { fontSize: '1.5rem' },
-  stepNumber: { color: '#e2e8f0', fontWeight: '900', fontSize: '1.2rem' },
-  stepTitle: { fontWeight: '800', color: '#1e293b', marginBottom: '8px' },
+  stepNumber: { color: '#d1fae5', fontWeight: '900', fontSize: '1.2rem' },
+  stepTitle: { fontWeight: '800', color: '#064e3b', marginBottom: '8px' },
   stepDesc: { fontSize: '0.85rem', color: '#64748b', lineHeight: '1.5' },
   chartColumn: { display: 'flex', flexDirection: 'column', gap: '25px' },
-  chartCard: { background: '#fff', padding: '30px', borderRadius: '24px', border: '1px solid #e2e8f0' },
-  chartTitle: { fontSize: '0.9rem', fontWeight: '800', color: '#1e293b', marginBottom: '20px', textTransform: 'uppercase' },
-  chartInsight: { marginTop: '15px', padding: '12px', background: '#eff6ff', borderRadius: '8px', fontSize: '0.8rem', color: '#0070f3', fontWeight: '600', textAlign: 'center' },
-  namingBox: { background: '#0f172a', padding: '30px', borderRadius: '24px', color: '#fff' },
-  namingTitle: { margin: '0 0 20px 0', fontSize: '0.9rem', fontWeight: '800', color: '#38bdf8', textTransform: 'uppercase' },
+  chartCard: { background: '#fff', padding: '30px', borderRadius: '24px', border: '1px solid #e5e7eb' },
+  chartTitle: { fontSize: '0.9rem', fontWeight: '800', color: '#022c22', marginBottom: '20px', textTransform: 'uppercase' },
+  chartInsight: { marginTop: '15px', padding: '12px', background: '#ecfdf5', borderRadius: '8px', fontSize: '0.8rem', color: '#059669', fontWeight: '600', textAlign: 'center' },
+  namingBox: { background: '#064e3b', padding: '30px', borderRadius: '24px', color: '#fff' },
+  namingTitle: { margin: '0 0 20px 0', fontSize: '0.9rem', fontWeight: '800', color: '#10b981', textTransform: 'uppercase' },
   namingVisual: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' },
   token: { padding: '6px 12px', background: 'rgba(255,255,255,0.1)', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700' },
-  tokenOrg: { padding: '6px 12px', background: '#0070f3', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700' },
-  tokenResult: { padding: '6px 12px', background: '#10b981', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700' },
-  plus: { fontWeight: 'bold', color: '#94a3b8' },
-  equal: { fontWeight: 'bold', color: '#94a3b8' },
-  namingDesc: { fontSize: '0.8rem', color: '#94a3b8', lineHeight: '1.5' }
+  tokenOrg: { padding: '6px 12px', background: '#059669', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700' },
+  tokenResult: { padding: '6px 12px', background: '#10b981', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700', color: '#022c22' },
+  plus: { fontWeight: 'bold', color: '#d1fae5' },
+  equal: { fontWeight: 'bold', color: '#d1fae5' },
+  namingDesc: { fontSize: '0.8rem', color: '#d1fae5', lineHeight: '1.5', opacity: 0.8 }
 };
 
 export default DeriverScreen;
