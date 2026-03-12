@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
-import MainHub from './Mainhub'; // Your default screen
+import MainHub from './Mainhub'; 
+import AuditDashboard from './AuditDashboard';
 import MaintenanceMode from './MaintenanceMode'; 
 
 function App() {
-  // SET TO 'true' TO BLOCK ACCESS
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
+  // --- MASTER TOGGLE ---
+  // true = Maintenance Mode (Public sees "Coming Soon")
+  // false = Live Mode (Public sees Mainhub)
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false);
   
-  // Track which dashboard we are looking at (if not in maintenance)
+  // Navigation state for when the site is LIVE
   const [currentView, setCurrentView] = useState('hub'); 
 
-  // 1. Priority Check: If maintenance is ON, nothing else renders
+  // 1. If Maintenance is active, return early so Mainhub never even loads
   if (isMaintenanceMode) {
     return <MaintenanceMode />;
   }
 
-  // 2. Normal App Logic: If maintenance is OFF, show the Hub or Dashboards
-
-    return <MainHub />;
-
+  // 2. If Maintenance is inactive, handle your standard app navigation
+  return (
+    <div className="App">
+      {currentView === 'hub' ? (
+        <MainHub onNavigateToAudit={() => setCurrentView('audit')} />
+      ) : (
+        <AuditDashboard onBack={() => setCurrentView('hub')} />
+      )}
+    </div>
+  );
 }
 
 export default App;
