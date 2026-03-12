@@ -3,9 +3,9 @@ import React from 'react';
 const DesignerFlow = ({ onBack }) => {
   const steps = [
     { 
-      id: 1, title: "Data Baseline", subtitle: "Snapshot Analysis", 
+      id: 1, title: "Usage History", subtitle: "Snapshot Analysis", 
       stats: "100% Data Integrity", 
-      desc: "Baseline existing authorizations for a 1:1 delta comparison.", icon: "📥", isAI: false 
+      desc: "Baseline Active User Actions globally to provide a foundation for intelligent role engineering.", icon: "📥", isAI: false 
     },
     { 
       id: 2, title: "Usage Intelligence", subtitle: "AI Segmentation", 
@@ -40,100 +40,160 @@ const DesignerFlow = ({ onBack }) => {
   ];
 
   return (
-    <div style={containerStyle}>
-      <div style={glowBg}></div>
-      
-      <div style={headerContainer}>
-        <div style={brandBox}>
-          <h1 style={titleStyle}>Role <span style={engineText}>Designer</span></h1>
-          <div style={liveStatus}><span style={pulseDot}></span> ENGINE ACTIVE</div>
+    <div style={styles.containerStyle}>
+      <div style={styles.headerContainer}>
+        <div style={styles.brandBox}>
+          <span style={styles.sectionLabel}>Role Management</span>
+          <h1 style={styles.titleStyle}>Role <span style={styles.engineText}>Designer</span></h1>
+          <div style={styles.liveStatus}>
+            <span style={styles.pulseDot}></span> 
+            DESIGNER ENGINE ONLINE
+          </div>
         </div>
-        <button onClick={onBack} style={exitButton}>← BACK TO MAIN MENU</button>
+        <button onClick={onBack} style={styles.exitButton}>← Back to Main Menu</button>
       </div>
 
-      <div style={gridWrapper}>
+      <div style={styles.gridWrapper}>
         {steps.map((step) => (
           <div key={step.id} style={{
-            ...glassCard,
-            borderTop: step.isAI ? '4px solid #27ae60' : '4px solid #e0eadd'
+            ...styles.glassCard,
+            borderTop: step.isAI ? '4px solid #0070f3' : '4px solid #e2e8f0'
           }}>
-            <div style={cardHeader}>
-              <div style={idCircle}>{step.id}</div>
-              {step.isAI && <div style={aiTag}>AI CORE</div>}
-              <div style={iconBox}>{step.icon}</div>
+            <div style={styles.cardHeader}>
+              <div style={styles.idCircle}>{step.id}</div>
+              {step.isAI && <div style={styles.aiTag}>AI AUGMENTED</div>}
+              <div style={styles.iconBox}>{step.icon}</div>
             </div>
 
-            <h3 style={stepTitle}>{step.title}</h3>
-            <div style={statChip}>{step.stats}</div>
-            <p style={stepDesc}>{step.desc}</p>
+            <h3 style={styles.stepTitle}>{step.title}</h3>
+            <div style={styles.statChip}>{step.stats}</div>
+            <p style={styles.stepDesc}>{step.desc}</p>
             
-            <div style={cardFooter}>
-               <span style={subLabel}>{step.subtitle}</span>
+            <div style={styles.cardFooter}>
+               <span style={styles.subLabel}>{step.subtitle}</span>
             </div>
           </div>
         ))}
       </div>
 
-      <div style={infoBar}>
-         <div style={infoItem}><strong>GLOBAL KPI:</strong> 85% REDUCTION IN ROLE BUILD TIME</div>
-         <div style={infoItem}><strong>ENGINE:</strong> SAP S/4HANA COMPLIANT V3.0</div>
+      <div style={styles.infoBar}>
+         <div style={styles.infoItem}><strong>GLOBAL KPI:</strong> 85% REDUCTION IN ROLE BUILD TIME</div>
+         <div style={styles.infoItem}><strong>PROTOCOL:</strong> S/4HANA COMPLIANT V3.0</div>
       </div>
     </div>
   );
 };
 
-// --- CLEAN GREEN & WHITE STYLES ---
-
-const containerStyle = { 
-  padding: '60px', 
-  backgroundColor: '#f8faf9', 
-  minHeight: '100vh', 
-  fontFamily: 'Segoe UI, Inter, sans-serif', 
-  color: '#333', 
-  position: 'relative', 
-  overflow: 'hidden' 
+// --- STRATEGIC BLUE THEME STYLES ---
+const styles = {
+  containerStyle: { 
+    padding: '60px', 
+    backgroundColor: '#f4f7fa', 
+    minHeight: '100vh', 
+    fontFamily: '"Inter", sans-serif', 
+    color: '#1a2b3b',
+    position: 'relative'
+  },
+  headerContainer: { 
+    maxWidth: '1300px', 
+    margin: '0 auto 60px auto', 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    alignItems: 'center' 
+  },
+  brandBox: { display: 'flex', flexDirection: 'column', gap: '2px' },
+  sectionLabel: { 
+    fontSize: '0.75rem', 
+    fontWeight: '800', 
+    color: '#0070f3', 
+    textTransform: 'uppercase', 
+    letterSpacing: '1.5px' 
+  },
+  titleStyle: { fontSize: '2.5rem', fontWeight: '900', margin: 0, letterSpacing: '-1.5px', color: '#1a2b3b' },
+  engineText: { color: '#0070f3' },
+  liveStatus: { 
+    fontSize: '0.7rem', 
+    color: '#64748b', 
+    fontWeight: 'bold', 
+    display: 'flex', 
+    alignItems: 'center', 
+    gap: '8px', 
+    marginTop: '5px' 
+  },
+  pulseDot: { 
+    width: '8px', 
+    height: '8px', 
+    backgroundColor: '#10b981', 
+    borderRadius: '50%', 
+    boxShadow: '0 0 8px rgba(16,185,129,0.5)' 
+  },
+  exitButton: { 
+    padding: '12px 24px', 
+    borderRadius: '12px', 
+    border: '1px solid #e2e8f0', 
+    background: '#fff', 
+    color: '#1a2b3b', 
+    cursor: 'pointer', 
+    fontSize: '0.85rem', 
+    fontWeight: '700', 
+    transition: '0.2s',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
+  },
+  gridWrapper: { 
+    maxWidth: '1300px', 
+    margin: '0 auto', 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+    gap: '20px' 
+  },
+  glassCard: {
+    background: '#fff', 
+    borderRadius: '20px', 
+    padding: '30px', 
+    border: '1px solid #e2e8f0',
+    display: 'flex', 
+    flexDirection: 'column', 
+    gap: '12px',
+    boxShadow: '0 4px 6px rgba(0,0,0,0.02)'
+  },
+  cardHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' },
+  idCircle: { color: '#0070f3', fontWeight: '900', fontSize: '1.1rem', opacity: 0.2 },
+  aiTag: { 
+    backgroundColor: '#0070f3', 
+    color: '#fff', 
+    fontSize: '0.6rem', 
+    fontWeight: '900', 
+    padding: '3px 8px', 
+    borderRadius: '4px', 
+    letterSpacing: '0.5px' 
+  },
+  iconBox: { fontSize: '2.2rem' },
+  stepTitle: { margin: 0, fontSize: '1.25rem', color: '#1a2b3b', fontWeight: '800' },
+  statChip: { 
+    backgroundColor: '#f0f7ff', 
+    color: '#0070f3', 
+    padding: '4px 10px', 
+    borderRadius: '6px', 
+    fontSize: '0.8rem', 
+    fontWeight: '700', 
+    width: 'fit-content' 
+  },
+  stepDesc: { fontSize: '0.9rem', color: '#5c6e82', lineHeight: '1.6', margin: 0 },
+  cardFooter: { marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #f8fafc' },
+  subLabel: { fontSize: '0.7rem', color: '#adb5bd', textTransform: 'uppercase', fontWeight: '800', letterSpacing: '0.5px' },
+  infoBar: { 
+    maxWidth: '1300px', 
+    margin: '50px auto 0 auto', 
+    border: '1px solid #e2e8f0', 
+    padding: '18px 30px', 
+    borderRadius: '16px', 
+    display: 'flex', 
+    justifyContent: 'space-between', 
+    color: '#64748b', 
+    fontSize: '0.8rem', 
+    background: '#fff' 
+  },
+  infoItem: { display: 'flex', gap: '8px' }
 };
-
-const glowBg = {
-  position: 'absolute', top: '-10%', left: '50%', width: '800px', height: '600px',
-  background: 'radial-gradient(circle, rgba(39,174,96,0.08) 0%, transparent 70%)',
-  transform: 'translateX(-50%)', zIndex: 0
-};
-
-const headerContainer = { maxWidth: '1300px', margin: '0 auto 60px auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', zIndex: 1 };
-const brandBox = { display: 'flex', flexDirection: 'column', gap: '5px' };
-const titleStyle = { fontSize: '2.5rem', fontWeight: '900', margin: 0, letterSpacing: '-1.5px', color: '#1b5e20' };
-const engineText = { color: '#27ae60', marginLeft: '8px' };
-const liveStatus = { fontSize: '0.75rem', color: '#27ae60', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px', letterSpacing: '1px' };
-const pulseDot = { width: '8px', height: '8px', backgroundColor: '#27ae60', borderRadius: '50%', boxShadow: '0 0 10px rgba(39,174,96,0.5)' };
-
-const exitButton = { padding: '12px 24px', borderRadius: '8px', border: '2px solid #27ae60', background: '#fff', color: '#27ae60', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 'bold', transition: '0.2s' };
-
-const gridWrapper = { 
-  maxWidth: '1300px', margin: '0 auto', display: 'grid', 
-  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px', position: 'relative', zIndex: 1 
-};
-
-const glassCard = {
-  background: '#fff', 
-  borderRadius: '16px', padding: '30px', border: '1px solid #e0eadd',
-  display: 'flex', flexDirection: 'column', gap: '15px', transition: '0.3s',
-  boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
-};
-
-const cardHeader = { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' };
-const idCircle = { color: '#27ae60', fontWeight: '900', fontSize: '1.2rem', opacity: 0.3 };
-const aiTag = { backgroundColor: '#1b5e20', color: '#fff', fontSize: '0.65rem', fontWeight: '900', padding: '4px 10px', borderRadius: '4px', letterSpacing: '1px' };
-const iconBox = { fontSize: '2.5rem' };
-
-const stepTitle = { margin: 0, fontSize: '1.4rem', color: '#1b5e20', fontWeight: '700' };
-const statChip = { backgroundColor: '#e8f5e9', color: '#2e7d32', padding: '5px 12px', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 'bold', width: 'fit-content' };
-const stepDesc = { fontSize: '0.95rem', color: '#555', lineHeight: '1.6', margin: 0 };
-
-const cardFooter = { marginTop: 'auto', paddingTop: '15px', borderTop: '1px solid #f0f0f0' };
-const subLabel = { fontSize: '0.75rem', color: '#888', textTransform: 'uppercase', fontWeight: 'bold' };
-
-const infoBar = { maxWidth: '1300px', margin: '60px auto 0 auto', border: '1px solid #e0eadd', padding: '20px', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', color: '#666', fontSize: '0.85rem', background: '#fff' };
-const infoItem = { display: 'flex', gap: '10px' };
 
 export default DesignerFlow;
