@@ -14,7 +14,7 @@ const FioriScreen = ({ onBack }) => {
 
   const valueProps = [
     { 
-      title: "Intelligent TM Modeling", 
+      title: "Intelligent Tile Modeling", 
       desc: "Automated Target Mapping based on actual transaction history, eliminating technical guesswork in Fiori Tile assignments.",
       icon: "🎯"
     },

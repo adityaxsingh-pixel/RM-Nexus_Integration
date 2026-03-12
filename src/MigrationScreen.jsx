@@ -57,7 +57,7 @@ const MigrationScreen = ({ onBack }) => {
           <div style={styles.chartPlaceholder}>
             <div style={styles.barLabel}>Manual Mapping (Weeks)</div>
             <div style={{...styles.barBase, width: '100%', backgroundColor: '#e2e8f0'}}></div>
-            <div style={styles.barLabel}>Nexus Engine (Hours)</div>
+            <div style={styles.barLabel}>Role Migration (Hours)</div>
             <div style={{...styles.barBase, width: '35%', backgroundColor: '#0070f3', boxShadow: '0 0 10px rgba(0,112,243,0.3)'}}></div>
           </div>
 

@@ -92,7 +92,7 @@ const LifecycleScreen = ({ onBack }) => {
                   <YAxis tick={{fontSize: 10, fill: '#64748b'}} axisLine={false} />
                   <Tooltip />
                   <Area type="monotone" dataKey="manual" stroke="#94a3b8" fill="#f1f5f9" name="Traditional SAP" />
-                  <Area type="monotone" dataKey="nexus" stroke="#10b981" fill="url(#colorNexus)" name="Nexus Orchestrator" />
+                  <Area type="monotone" dataKey="nexus" stroke="#10b981" fill="url(#colorNexus)" name="RM Operator" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
